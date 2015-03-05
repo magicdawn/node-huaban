@@ -35,7 +35,7 @@ var imgHosts = {
 /**
  * get html for url
  */
-var getHtmlAsync = co.wrap(function*(url, query) {
+var getHtmlAsync = function(url, query) {
   /** construct request */
   var req = request
     .get(url)
@@ -49,7 +49,7 @@ var getHtmlAsync = co.wrap(function*(url, query) {
     .then(function(res) {
       return res.text;
     })
-});
+};
 
 
 /**
