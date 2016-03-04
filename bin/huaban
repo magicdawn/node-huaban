@@ -11,6 +11,7 @@ const request = require('../lib/patch').superagent;
 const _ = require('lodash');
 const minimist = require('minimist');
 const HuabanBoard = require('../lib');
+const debug = require('debug')('huaban:cli');
 
 /**
  * args
@@ -18,11 +19,14 @@ const HuabanBoard = require('../lib');
 const argv = minimist(process.argv.slice(2), {
   boolean: ['help'],
   alias: {
+    h: ['help'],
     c: ['concurrency'],
-    h: ['help']
+    t: ['timeout']
   },
-  defaults: {
-    concurrency: 10
+  default: {
+    concurrency: 10,
+    timeout: 1,
+    'max-times': 5
   }
 });
 
@@ -32,20 +36,30 @@ if (process.argv.length === 2 || argv.help) {
   huaban board downloader
 
     Usage:
-      iojs huaban.js <board-url> [options]
+      huaban [options] <board_url>
 
     Options:
-      -c,--concurrency    ->    同时最大下载数量,默认10
-      -h,--help           ->    输出此帮助信息
+      -h,--help         输出此帮助信息
+      -c,--concurrency  同时最大下载数量,默认10
+      -t, --timeout     超时, 单位分, 默认1分钟 = 60 * 1000毫秒
+      --max-times       重试次数, 默认5
 
     Example:
-      iojs huaban.js ${ exampleUrl } -c 10
+      huaban ${ exampleUrl } -c 10
   `);
   process.exit();
 }
 
 // 并发
 const concurrency = argv.concurrency;
+
+// timeout in ms
+const timeout = argv.timeout * 60 * 1000;
+
+// 重试次数
+const maxTimes = argv['max-times'];
+
+debug('parsed argv: %j', argv);
 
 co(function*() {
   const url = argv._[0];
@@ -54,11 +68,11 @@ co(function*() {
 
   // download
   const board = new HuabanBoard(url);
-  yield board.initAsync();
+  yield board.init();
 
   // title & name
   console.log(`花瓣画板: [${ board.title }], 共 ${ board.pins.length } 张图片`);
-  yield board.downloadBoardAsync();
+  yield board.downloadBoard(concurrency, timeout, maxTimes);
 
   // end
   const end = Date.now();
