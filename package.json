@@ -4,7 +4,7 @@
   "description": "huaban(huaban.com) board downloader",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "echo 'test not written'; exit 1"
   },
   "bin": {
     "huaban": "bin/huaban"
