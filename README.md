@@ -9,6 +9,6 @@ iojs huaban.js <画板地址> -c 同时下载数量(默认10)`
 ## 依赖:
 
 	$ npm i bluebird co superagent superagent-bluebird-promise lodash mime minimist
-	
+
 ## 其他版本
 http://magicdawn.ml/2014/07/23/huaban-board-downloader/
