@@ -29,8 +29,6 @@ $ huaban
 
     Example:
       huaban http://huaban.com/boards/17324249/ -c 10
-
-
 ```
 
 ## API
