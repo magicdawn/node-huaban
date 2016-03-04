@@ -12,6 +12,7 @@ const _ = require('lodash');
 const minimist = require('minimist');
 const HuabanBoard = require('../lib');
 const debug = require('debug')('huaban:cli');
+const pkgVersion = require('../package').version;
 
 /**
  * args
@@ -33,7 +34,7 @@ const argv = minimist(process.argv.slice(2), {
 const exampleUrl = 'http://huaban.com/boards/17324249/';
 if (process.argv.length === 2 || argv.help) {
   console.log(`
-  huaban board downloader
+  huaban board downloader v${ pkgVersion }
 
     Usage:
       huaban [options] <board_url>
