@@ -1,6 +1,6 @@
 {
   "name": "node-huaban",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "huaban(huaban.com) board downloader",
   "main": "lib/index.js",
   "scripts": {
