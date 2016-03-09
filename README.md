@@ -63,6 +63,10 @@ yield board.init();
 yield board.downloadBoard(concurrency, timeout, maxTimes);
 ```
 
+## Changelog
+
+[CHANGELOG.md](CHANGELOG.md)
+
 ## License
 
 the MIT License http://magicdawn.mit-license.org
