@@ -24,16 +24,15 @@
   },
   "homepage": "https://github.com/magicdawn/node-huaban#readme",
   "dependencies": {
-    "bluebird": "^3.3.3",
     "chalk": "^1.1.1",
     "co": "^4.6.0",
     "debug": "^2.2.0",
-    "fs-extra": "^0.26.5",
     "lodash": "^4.6.1",
     "log-symbols": "^1.0.2",
     "mime": "^1.3.4",
     "minimist": "^1.2.0",
-    "superagent": "^1.8.0-beta.2"
+    "needle-kit": "^1.2.0",
+    "promise.map": "0.0.1"
   },
   "engines": {
     "node": ">=4"

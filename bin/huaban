@@ -5,9 +5,10 @@
 /**
  * module dependencies
  */
-global.Promise = require('bluebird');
+
+const kit = require('needle-kit');
 const co = require('co');
-const request = require('../lib/patch').superagent;
+const request = kit.request;
 const _ = require('lodash');
 const minimist = require('minimist');
 const HuabanBoard = require('../lib');
