@@ -1,9 +1,9 @@
 # node-huaban
 花瓣(http://huaban.com) 画板下载器
 
-[![npm version](https://img.shields.io/npm/v/node-huaban.svg)](#)
-[![node version](https://img.shields.io/node/v/node-huaban.svg)](#)
-[![license](https://img.shields.io/npm/l/node-huaban.svg)](#)
+[![npm version](https://img.shields.io/npm/v/node-huaban.svg?style=flat-square)](#)
+[![node version](https://img.shields.io/node/v/node-huaban.svg?style=flat-square)](#)
+[![license](https://img.shields.io/npm/l/node-huaban.svg?style=flat-square)](#)
 
 
 ## 安装
