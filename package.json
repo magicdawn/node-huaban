@@ -41,5 +41,12 @@
   },
   "devDependencies": {
     "eslint": "^3.4.0"
-  }
+  },
+  "files": [
+    "lib/",
+    "bin/",
+    "package.json",
+    "README.md",
+    "CHANGELOG.md"
+  ]
 }
