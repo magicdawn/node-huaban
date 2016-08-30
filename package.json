@@ -33,6 +33,7 @@
     "mime": "^1.3.4",
     "minimist": "^1.2.0",
     "promise.map": "^0.0.2",
+    "promise.retry": "^0.1.0",
     "superagent": "^2.2.0"
   },
   "engines": {
