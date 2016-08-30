@@ -32,9 +32,13 @@
     "mime": "^1.3.4",
     "minimist": "^1.2.0",
     "needle-kit": "^1.2.0",
-    "promise.map": "0.0.1"
+    "promise.map": "^0.0.2"
   },
   "engines": {
     "node": ">=4"
+  },
+  "devDependencies": {
+    "eslint": "^3.4.0",
+    "superagent": "^2.2.0"
   }
 }

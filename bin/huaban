@@ -11,8 +11,8 @@ const co = require('co');
 const request = kit.request;
 const _ = require('lodash');
 const minimist = require('minimist');
-const HuabanBoard = require('../lib');
 const debug = require('debug')('huaban:cli');
+const HuabanBoard = require('../lib');
 const pkgVersion = require('../package').version;
 
 /**
