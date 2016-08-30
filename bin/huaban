@@ -3,15 +3,14 @@
 'use strict';
 
 /**
- * module dependencies
+ * Module dependencies
  */
 
-const kit = require('needle-kit');
 const co = require('co');
-const request = kit.request;
 const _ = require('lodash');
 const minimist = require('minimist');
 const debug = require('debug')('huaban:cli');
+const request = require('superagent');
 const HuabanBoard = require('../lib');
 const pkgVersion = require('../package').version;
 
