@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
-'use strict';
+'use strict'
 
 /**
  * Module dependencies
  */
 
-const co = require('co');
-const _ = require('lodash');
-const minimist = require('minimist');
-const debug = require('debug')('huaban:cli');
-const request = require('superagent');
-const HuabanBoard = require('../lib');
-const pkgVersion = require('../package').version;
+const co = require('co')
+const _ = require('lodash')
+const minimist = require('minimist')
+const debug = require('debug')('huaban:cli')
+const request = require('superagent')
+const HuabanBoard = require('../lib')
+const pkgVersion = require('../package').version
 
 /**
  * args
@@ -29,9 +29,9 @@ const argv = minimist(process.argv.slice(2), {
     timeout: 1,
     'max-times': 5
   }
-});
+})
 
-const exampleUrl = 'http://huaban.com/boards/17324249/';
+const exampleUrl = 'http://huaban.com/boards/17324249/'
 if (process.argv.length === 2 || argv.help) {
   console.log(`
   huaban board downloader v${ pkgVersion }
@@ -47,35 +47,35 @@ if (process.argv.length === 2 || argv.help) {
 
     Example:
       huaban ${ exampleUrl } -c 10
-  `);
-  process.exit();
+  `)
+  process.exit()
 }
 
 // 并发
-const concurrency = argv.concurrency;
+const concurrency = argv.concurrency
 
 // timeout in ms
-const timeout = argv.timeout * 60 * 1000;
+const timeout = argv.timeout * 60 * 1000
 
 // 重试次数
-const maxTimes = argv['max-times'];
+const maxTimes = argv['max-times']
 
-debug('parsed argv: %j', argv);
+debug('parsed argv: %j', argv)
 
 co(function*() {
-  const url = argv._[0];
-  const concurrency = argv.concurrency;
-  const start = Date.now();
+  const url = argv._[0]
+  const concurrency = argv.concurrency
+  const start = Date.now()
 
   // download
-  const board = new HuabanBoard(url);
-  yield board.init();
+  const board = new HuabanBoard(url)
+  yield board.init()
 
   // title & name
-  console.log(`花瓣画板: [${ board.title }], 共 ${ board.pins.length } 张图片`);
-  yield board.downloadBoard(concurrency, timeout, maxTimes);
+  console.log(`花瓣画板: [${ board.title }], 共 ${ board.pins.length } 张图片`)
+  yield board.downloadBoard(concurrency, timeout, maxTimes)
 
   // end
-  const end = Date.now();
-  console.log('耗时 %s 秒', (end - start) / 1000);
-}).catch(e => console.error(e.stack || e));
+  const end = Date.now()
+  console.log('耗时 %s 秒', (end - start) / 1000)
+}).catch(e => console.error(e.stack || e))

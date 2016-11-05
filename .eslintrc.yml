@@ -10,7 +10,7 @@ env:
 # rules
 rules:
   # basic
-  semi: [error, always]
+  semi: [error, never]
   quotes: [error, single]
   eqeqeq: error
   camelcase: error

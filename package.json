@@ -34,7 +34,8 @@
     "minimist": "^1.2.0",
     "promise.map": "^0.0.2",
     "promise.retry": "^0.1.0",
-    "superagent": "^2.2.0"
+    "request": "^2.78.0",
+    "request-promise": "^4.1.1"
   },
   "engines": {
     "node": ">=4"
@@ -43,10 +44,7 @@
     "eslint": "^3.4.0"
   },
   "files": [
-    "lib/",
-    "bin/",
-    "package.json",
-    "README.md",
-    "CHANGELOG.md"
+    "lib",
+    "bin"
   ]
 }
