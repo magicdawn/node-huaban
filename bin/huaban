@@ -10,7 +10,6 @@ const co = require('co')
 const _ = require('lodash')
 const minimist = require('minimist')
 const debug = require('debug')('huaban:cli')
-const request = require('superagent')
 const HuabanBoard = require('../lib')
 const pkgVersion = require('../package').version
 
