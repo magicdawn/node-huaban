@@ -13,9 +13,6 @@ const debug = require('debug')('huaban:cli')
 const HuabanBoard = require('../lib')
 const pkgVersion = require('../package').version
 
-/**
- * args
- */
 const argv = minimist(process.argv.slice(2), {
   boolean: ['help'],
   alias: {
