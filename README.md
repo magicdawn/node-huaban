@@ -1,4 +1,6 @@
 # node-huaban
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/magicdawn/node-huaban.svg)](https://greenkeeper.io/)
 花瓣(http://huaban.com) 画板下载器
 
 [![npm version](https://img.shields.io/npm/v/node-huaban.svg?style=flat-square)](#)
