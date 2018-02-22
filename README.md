@@ -40,16 +40,16 @@ const HuabanBoard = require('node-huaban');
 ### constructor
 
 ```js
-const board = new HuabanBoard(url); // url 是画板地址
+const board = new HuabanBoard(url) // url 是画板地址
 ```
 
 ### init
 
 ```js
-board.init(); // return a Promise, when all pins & title are ready
+board.init() // return a Promise, when all pins & title are ready
 
-// normally, use with co
-yield board.init();
+// normally, use with async/await
+await board.init()
 ```
 
 运行 `init` 之后, board会包含以下字段:
@@ -60,7 +60,7 @@ yield board.init();
 下载所有图片
 
 ```js
-yield board.downloadBoard(concurrency, timeout, maxTimes);
+await board.downloadBoard(concurrency, timeout, maxTimes)
 ```
 
 ## Changelog
