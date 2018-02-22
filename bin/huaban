@@ -18,19 +18,19 @@ const argv = minimist(process.argv.slice(2), {
   alias: {
     h: ['help'],
     c: ['concurrency'],
-    t: ['timeout']
+    t: ['timeout'],
   },
   default: {
     concurrency: 10,
     timeout: 1,
-    'max-times': 5
-  }
+    'max-times': 5,
+  },
 })
 
 const exampleUrl = 'http://huaban.com/boards/17324249/'
 if (process.argv.length === 2 || argv.help) {
   console.log(`
-  huaban board downloader v${ pkgVersion }
+  huaban board downloader v${pkgVersion}
 
     Usage:
       huaban [options] <board_url>
@@ -42,7 +42,7 @@ if (process.argv.length === 2 || argv.help) {
       --max-times       重试次数, 默认5
 
     Example:
-      huaban ${ exampleUrl } -c 10
+      huaban ${exampleUrl} -c 10
   `)
   process.exit()
 }
@@ -68,7 +68,7 @@ co(function*() {
   yield board.init()
 
   // title & name
-  console.log(`花瓣画板: [${ board.title }], 共 ${ board.pins.length } 张图片`)
+  console.log(`花瓣画板: [${board.title}], 共 ${board.pins.length} 张图片`)
   yield board.downloadBoard(concurrency, timeout, maxTimes)
 
   // end
