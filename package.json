@@ -53,7 +53,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format && git add lib/**/*.js bin/*"
+      "pre-commit": "npm run format && git add lib/*.js bin"
     }
   }
 }
