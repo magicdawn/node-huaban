@@ -35,7 +35,8 @@
     "promise.map": "^0.0.2",
     "promise.retry": "^0.1.0",
     "request": "^2.83.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "sanitize-filename": "^1.6.1"
   },
   "engines": {
     "node": ">=7.6.0"
