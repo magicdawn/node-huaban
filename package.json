@@ -4,6 +4,7 @@
   "description": "huaban(huaban.com) board downloader",
   "main": "lib/index.js",
   "scripts": {
+    "format": "prettier --write lib/**/*.js bin/*",
     "test": "echo 'test not written'; exit 1"
   },
   "bin": {
@@ -42,10 +43,17 @@
     "node": ">=7.6.0"
   },
   "devDependencies": {
-    "eslint": "^4.18.1"
+    "eslint": "^4.18.1",
+    "husky": "^0.14.3",
+    "prettier": "^1.11.1"
   },
   "files": [
     "lib",
     "bin"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && git add bin lib/**/*.js"
+    }
+  }
 }
